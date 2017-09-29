@@ -1,13 +1,19 @@
-#export PATH=/usr/local/git/bin:$PATH
 export GREP_OPTIONS='--color=auto --exclude=*.class --exclude-dir=target'
 export GIT_EDITOR=vim
-export PS1="[\[\033[00m\]\u@\h\[\033[32m\] \W \[\033[31m\]\$(parse_git_repo)-\$(parse_git_branch)\[\033[00m\]]$\[\033[00m\] "
+# Mac Os Specific (Maybe)
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PS1="[\[\033[00m\]\u@\h\[\033[32m\] \W \$(parse_git_branch)\[\033[00m\]]$\[\033[00m\] "
 export PATH=/usr/local/bin:$PATH
 
 alias s='git status'
 # ignore whitespace: alias d='git diff -w HEAD'
 alias d='git diff HEAD'
 alias comp='python ~/py_test_compile.py'
+alias ll='ls -lrt'
+alias fir='git'
+
+# vi commands in terminal
+set -o vi
 
 function get() {
     git log -"$1" | sed "s/commit /https:\/\/github\.com\/ORG_NAME\/$(parse_git_branch)\/commit\//" | sed 's/\(.*commit.*\)$/\1/'
