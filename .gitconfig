@@ -1,17 +1,25 @@
-[alias]
-	mergein = merge --no-ff --log=100
-[user]
-	name = Scott Ferguson
-	email =
 [color]
-    ui = on
+ui = on
+
+[alias]
+mergein = merge --no-ff --log=100
+d = diff -b --color-words
+dc = diff --cached -b --color-words
+marked-unchanged = !git ls-files -v | grep ^[a-z]
+co = checkout
+sub = submodule
+l = log --graph --decorate --oneline
+ls = log --graph --decorate --oneline --stat
+la = log --graph --decorate --oneline --all
+lsa = log --graph --decorate --oneline --stat --all
+
 [core]
-  pager = cat
-  editor = vim
-[branch]
-	autosetuprebase = never
-[push]
-	default = simple
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+pager = cat
+editor = vim
+
+[github]
+user = pblaze
+
+[user]
+email = pblaze@gmail.com
+name = paul blaze
