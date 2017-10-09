@@ -1,7 +1,13 @@
 export GREP_OPTIONS='--color=auto --exclude=*.class --exclude-dir=target'
 export GIT_EDITOR=vim
-# Mac Os Specific (Maybe)
-export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Mac Os Specific (Maybe) - this will work when we've upgraded to java 9
+# export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Force Java 1.8 as JAVA_HOME
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
+export PATH=${PATH}:${JAVA_HOME}
+
 export PS1="[\[\033[00m\]\u@\h\[\033[32m\] \W \$(parse_git_branch)\[\033[00m\]]$\[\033[00m\] "
 export PATH=/usr/local/bin:$PATH
 
