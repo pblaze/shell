@@ -18,6 +18,10 @@ alias comp='python ~/py_test_compile.py'
 alias ll='ls -lrt'
 alias fir='git'
 
+# remove alias
+alias dockerstp=‘docker stop $(docker ps -a -q)’
+alias dockerrmv=‘docker rm $(docker ps -a -q)’
+
 # vi commands in terminal
 set -o vi
 
